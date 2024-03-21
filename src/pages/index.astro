@@ -1,6 +1,9 @@
 ---
 // Component Imports
 import Counter from '../components/Counter';
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/components/Container.astro';
+import '../styles/global.css';
 const someProps = {
 	count: 0,
 };
@@ -9,7 +12,7 @@ const someProps = {
 // https://docs.astro.build/basics/astro-components/
 ---
 
-<html lang="en">
+<!--html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -33,4 +36,11 @@ const someProps = {
 			</Counter>
 		</main>
 	</body>
-</html>
+</html-->
+
+<Layout title="Astro + React">
+	<Container>
+		<Counter {...someProps} client:visible>
+			<h1>Hello, React!</h1>
+		</Counter>
+	</Container>
